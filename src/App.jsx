@@ -1,18 +1,13 @@
-import styled from 'styled-components'
 import homeBackground from './assets/home-background.png'
+import GlobalStyles from './components/GlobalStyles'
 import Home from './components/Home'
-
-const AppContainer = styled.div`
-  
-  margin: 10px 300px;
-  height: 100vh;
-`
 
 function App() {
   return (
-    <AppContainer >
-      <Home $homeBackground={homeBackground} />
-    </AppContainer>
+    <>
+    <GlobalStyles />
+      <Home homeBackground={homeBackground} />
+    </>
   )
 }
 

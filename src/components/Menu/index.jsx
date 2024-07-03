@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import logo from './logo.png'
 
 const Header = styled.header`
     display: flex;
@@ -10,26 +11,38 @@ const StyledList = styled.ul`
     list-style: none;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
-    color: #202020;
-    gap: 1rem;
     cursor: pointer;
-    
+    a {
+        text-decoration: none;
+        color: #202020;
+        margin: 0 1rem;
+    }
 `
 
 export default function Menu() {
     return (
         <Header>
-            <img src="images/logo.png" />
+            <img src={logo} />
             <StyledList>
-                <li>Como fazer</li>
-                <li>/</li>
-                <li>Ofertas</li>
-                <li>/</li>
-                <li>Depoimentos</li>
-                <li>/</li>
-                <li>Vídeos</li>
-                <li>/</li>
-                <li>Meu carrinho</li>
+                <li>
+                    <a href="/">Como fazer</a>
+                    /
+                </li>
+                <li>
+                    <a href="/">Ofertas</a>
+                    /
+                </li>
+                <li>
+                    <a href="/">Depoimentos</a>
+                    /
+                </li>
+                <li>
+                    <a href="/">Vídeos</a>
+                    /
+                </li>
+                <li>
+                    <a href="/">Meu carrinho</a>
+                </li>
             </StyledList>
         </Header>
     )

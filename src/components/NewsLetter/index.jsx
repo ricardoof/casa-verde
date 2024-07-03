@@ -1,5 +1,7 @@
 import styled from "styled-components"
 import TextField from "../TextField"
+import mail from './mail.png'
+import plant from './plant.png'
 
 const StyledNewsLetter = styled.div`
     display: flex;
@@ -18,17 +20,12 @@ const NewsLetterContent = styled.div`
     h1 {
         font-family: "Elsie Swash Caps", serif;
         font-size: 82px;
-        margin: 0;
-    }
-    p {
-        font-family: 'Montserrat', sans-serif;
-        margin: 0;
     }
 `
 
 const Div = styled.div`
     display: flex;
-    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.08);
+    box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.2);
     height: 65px;
     background-color: #FFF;
     align-items: center;
@@ -37,6 +34,7 @@ const Div = styled.div`
 const Button = styled.button`
     background-color: #FFCB47;
     color: #FFF;
+    font-size: 16px;
     border: none;
     width: 194px;
     height: 65px;
@@ -44,7 +42,7 @@ const Button = styled.button`
 `
 
 const Image = styled.div`
-    margin-left: 250px;
+    margin-left: 300px;
 `
 
 export default function NewsLetter() {
@@ -55,13 +53,13 @@ export default function NewsLetter() {
                 <h1>melhores plantas</h1>
                 <p>Encontre aqui uma vasta seleção de plantas para decorar a sua casa e torná-lo uma pessoa mais feliz no seu dia a dia. Entre com seu e-mail e assine nossa newsletter para saber das novidades da marca.</p>
                 <Div>
-                    <img src="./src/assets/mail.png" />
+                    <img src={mail} />
                     <TextField />
                     <Button>Assinar newsletter</Button>
                 </Div>
             </NewsLetterContent>
             <Image>
-                <img src="./src/assets/planta-home.png" />
+                <img src={plant} />
             </Image>
         </StyledNewsLetter>
     )
