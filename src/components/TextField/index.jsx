@@ -9,8 +9,14 @@ const Input = styled.input`
     padding: 10px;
 `
 
-export default function TextField() {
+export default function TextField({ value, type, whenChange, placeholder }) {
+    const whenTyping = (event) => {
+        whenChange(event.target.value)
+    }
+
     return (
-        <Input placeholder="Assine a newsletter"/>
+        <>
+            <Input value={value} type={type} onChange={whenTyping} placeholder={placeholder} />
+        </>
     )
 }

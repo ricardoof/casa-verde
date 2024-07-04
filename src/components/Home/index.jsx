@@ -13,7 +13,7 @@ const HomeContainer = styled.div`
 const HomeContent = styled.div`
     display: flex;
     flex-direction: column;
-    margin: 0 20rem;
+    margin: 0 20rem 5rem 20rem;
 `
 
 export default function Home({ homeBackground }) {

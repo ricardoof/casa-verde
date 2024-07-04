@@ -5,7 +5,7 @@ import Home from './components/Home'
 function App() {
   return (
     <>
-    <GlobalStyles />
+      <GlobalStyles />
       <Home homeBackground={homeBackground} />
     </>
   )

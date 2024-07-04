@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import plant from './produto-01.png'
+import arrow from './arrow.png'
 
 const OfferContainer = styled.div`
     display: flex;
@@ -20,11 +21,20 @@ const Text = styled.div`
         font-size: 32px;
         font-style: Black;
     }
-    button {
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-        color: #FFCB47;
+    div {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            color: #FFCB47;
+        }
+        img {
+            width: 14px;
+            height: 8px;
+        }
     }
 `
 
@@ -35,7 +45,10 @@ export default function Offer() {
             <Text>
                 <h3>Ajuga reptans</h3>
                 <p>R$20,00</p>
-                <button>Comprar</button>
+                <div>
+                    <button>Comprar</button>
+                    <img src={arrow} alt="" />
+                </div>
             </Text>
         </OfferContainer>
     )
