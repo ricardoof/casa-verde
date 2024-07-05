@@ -7,7 +7,7 @@ const OffersContainer = styled.section`
     width: 1200px;
     height: 568px;
     align-items: center;
-    margin-top: 2rem;
+    margin: 2rem 0;
     p {
         font-size: 22px;
         color: #202020;
@@ -19,7 +19,6 @@ const OffersContainer = styled.section`
 `
 const Products = styled.div`
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
     gap: 30px;
 `
@@ -30,7 +29,11 @@ export default function Offers({ plants }) {
             <p>Conheça nossas</p>
             <h2>ofertas</h2>
             <Products>
-                {plants.map(plant => <Offer plant={plant} key={plant.id} />)}
+                {plants.map(plant =>
+                    <Offer
+                        plant={plant}
+                        key={plant.id}
+                    />)}
             </Products>
         </OffersContainer>
     )

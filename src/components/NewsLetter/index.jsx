@@ -34,6 +34,9 @@ const Form = styled.form`
     background-color: #FFF;
     align-items: center;
     margin-top: 37px;
+    img {
+        margin: 10px;
+    }
 `
 
 const Button = styled.button`
