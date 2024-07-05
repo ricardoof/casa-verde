@@ -1,11 +1,8 @@
 import styled from "styled-components"
-import plant from './produto-01.png'
-import arrow from './arrow.png'
 
 const OfferContainer = styled.div`
     display: flex;
-    
-    width: 379px;
+    width: 380px;
     height: 200px;
     box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.2);
 `
@@ -13,42 +10,58 @@ const OfferContainer = styled.div`
 const Text = styled.div`
     display: flex;
     flex-direction: column;
-    width: 90px;
-    gap: 1rem;
-    padding: 27px;
+    width: 100px;
+    gap: 16px;
+    margin: 20px;
     h3 {
         font-family: "Elsie Swash Caps", serif;
         font-size: 32px;
         font-style: Black;
     }
-    div {
-        display: flex;
-        gap: 1rem;
-        align-items: center;
-        button {
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-            color: #FFCB47;
-        }
-        img {
-            width: 14px;
-            height: 8px;
-        }
+    p {
+        color: #202020;
     }
 `
 
-export default function Offer() {
+const Image = styled.div`
+    width: 200px;
+    height: 200px;
+    img {
+        width: 100%;
+        height: 100%;
+    }
+`
+
+const Buy = styled.div`
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        color: #FFCB47;
+    }
+    img {
+        width: 14px;
+        height: 8px;
+    }
+`
+
+export default function Offer({ plant }) {
     return (
         <OfferContainer>
-            <img src={plant} alt="" />
+            <Image>
+
+            <img src={plant.image} alt={`Image of ${plant.name}`} />
+            </Image>
             <Text>
-                <h3>Ajuga reptans</h3>
-                <p>R$20,00</p>
-                <div>
+                <h3>{plant.name}</h3>
+                <p>{plant.price}</p>
+                <Buy>
                     <button>Comprar</button>
-                    <img src={arrow} alt="" />
-                </div>
+                    <img src="/images/arrow.png" alt="" />
+                </Buy>
             </Text>
         </OfferContainer>
     )

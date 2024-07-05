@@ -4,7 +4,8 @@ import Offer from "./Offer"
 const OffersContainer = styled.section`
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 1200px;
+    height: 568px;
     align-items: center;
     margin-top: 2rem;
     p {
@@ -14,21 +15,23 @@ const OffersContainer = styled.section`
     h2 {
         font-family: "Elsie Swash Caps", serif;
         font-size: 82px;
-        font-style: Black;
-    }
-    div {
-
     }
 `
+const Products = styled.div`
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+`
 
-export default function Offers() {
+export default function Offers({ plants }) {
     return (
         <OffersContainer>
             <p>Conheça nossas</p>
             <h2>ofertas</h2>
-            <div>
-                <Offer />
-            </div>
+            <Products>
+                {plants.map(plant => <Offer plant={plant} key={plant.id} />)}
+            </Products>
         </OffersContainer>
     )
 }

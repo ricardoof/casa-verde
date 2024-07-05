@@ -1,10 +1,14 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
+* {
+  box-sizing: border-box;
+}
 html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
 }
 
 body {

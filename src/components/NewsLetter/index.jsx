@@ -15,12 +15,15 @@ const NewsLetterContent = styled.div`
     flex-direction: column;
     text-align: left;
     width: 585px;
-    top: 140px;
-    gap: 35px;
+    top: 200px;
     color: #202020;
     h1 {
         font-family: "Elsie Swash Caps", serif;
         font-size: 82px;
+        margin: 12px 0 24px 0;
+    }
+    p {
+        margin-right: 90px;
     }
 `
 
@@ -30,20 +33,24 @@ const Form = styled.form`
     height: 65px;
     background-color: #FFF;
     align-items: center;
+    margin-top: 37px;
 `
 
 const Button = styled.button`
     background-color: #FFCB47;
     color: #FFF;
-    font-size: 16px;
     border: none;
-    width: 194px;
+    width: 250px;
     height: 65px;
     cursor: pointer;
 `
 
 const Image = styled.div`
-    margin-left: 300px;
+    margin-left: 350px;
+    width: 700px;
+    img {
+        width: 100%;
+    }
 `
 
 export default function NewsLetter() {
@@ -51,12 +58,7 @@ export default function NewsLetter() {
 
     const whenSave = (event) => {
         event.preventDefault();
-        if (email == "") {
-            alert('Escreva um email válido')
-        }
-        else {
-            alert(`Obrigado pela sua assinatura, você receberá nossas novidades no e-mail ${email}`)
-        }
+        email == "" ? alert('Escreva um e-mail válido') : alert(`Obrigado pela sua assinatura, você receberá nossas novidades no e-mail ${email}`)
         setEmail('');
     }
 

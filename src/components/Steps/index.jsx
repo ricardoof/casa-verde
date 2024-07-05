@@ -6,10 +6,11 @@ const StepsContainer = styled.section`
     display: flex;
     width: 995px;
     height: 440px;
-    margin: 0 150px;
-    img {
+    &div {
         width: 585px;
-        height: 440px;
+    }
+    img {
+        width: 100%;
     }
 `
 
@@ -17,7 +18,7 @@ const Text = styled.div`
     display: flex;
     flex-direction: column;
     gap: 15px;
-    padding: 70px 32px;
+    margin: 70px 32px;
     p {
         font-size: 22px;
         color: #202020;
@@ -32,13 +33,15 @@ const Text = styled.div`
 export default function Steps() {
     return (
         <StepsContainer>
-            <img src={plant} alt="" />
+            <div>
+                <img src={plant} alt="" />
+            </div>
             <Text>
                 <p>Como conseguir </p>
                 <h2>minha planta</h2>
-                <Step text="Escolha suas plantas"/>
-                <Step text="Faça seu pedido"/>
-                <Step text="Aguarde na sua casa"/>
+                <Step text="Escolha suas plantas" />
+                <Step text="Faça seu pedido" />
+                <Step text="Aguarde na sua casa" />
             </Text>
         </StepsContainer>
     )
