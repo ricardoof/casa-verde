@@ -10,7 +10,8 @@ export default async function handler(req, res) {
         if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
             return res.status(400).json({ error: 'Email inválido' });
         }
-        const name = email.split('@');
+        const emailParts = email.split('@');
+        const name = emailParts[0];
         const msg = {
             to: email,
             from: 'ricardoferreira4496@gmail.com', // Substitua pelo seu e-mail verificado
@@ -19,7 +20,7 @@ export default async function handler(req, res) {
                 Boas-vindas à Casa Verde! Você se cadastrou em nossa newsletter e vai começar a receber e-mails com as novidades de nossa loja e dicas de como cuidar de suas plantas.
                 Até logo!`,
             html: `<p>Olá, ${name}</p>
-                    <p><strong>Boas-vindas à Casa Verde!</strong> Você se cadastrou em nossa newsletter e vai começar a receber e-mails com as novidades de nossa loja e dicas de como cuidar de suas plantas.</p>
+                    <p>Boas-vindas à Casa Verde! Você se cadastrou em nossa newsletter e vai começar a receber e-mails com as novidades de nossa loja e dicas de como cuidar de suas plantas.</p>
                     <p>Até logo!</p>`,
         };
 
