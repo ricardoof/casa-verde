@@ -18,7 +18,9 @@ export default async function handler(req, res) {
             text: `Olá ${name},
                 Boas-vindas à Casa Verde! Você se cadastrou em nossa newsletter e vai começar a receber e-mails com as novidades de nossa loja e dicas de como cuidar de suas plantas.
                 Até logo!`,
-            html: '<strong>Boas-vindas à Casa Verde!</strong>',
+            html: `<p>Olá, ${name}</p>
+                    <p><strong>Boas-vindas à Casa Verde!</strong> Você se cadastrou em nossa newsletter e vai começar a receber e-mails com as novidades de nossa loja e dicas de como cuidar de suas plantas.</p>
+                    <p>Até logo!</p>`,
         };
 
         try {
