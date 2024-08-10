@@ -13,7 +13,7 @@ export default async function handler(req, res) {
 
         const msg = {
             to: email,
-            from: 'your-email@example.com', // Substitua pelo seu e-mail verificado
+            from: 'ricardoferreira4496@gmail.com', // Substitua pelo seu e-mail verificado
             subject: 'Newsletter da Casa Verde',
             text: `Olá,
                 Boas-vindas à Casa Verde! Você se cadastrou em nossa newsletter e vai começar a receber e-mails com as novidades de nossa loja e dicas de como cuidar de suas plantas.
