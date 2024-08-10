@@ -62,27 +62,27 @@ export default function NewsLetter() {
 
     const whenSave = (event) => {
         event.preventDefault();
-        email == "" ? alert('Escreva um e-mail válido') : alert(`Obrigado pela sua assinatura, você receberá nossas novidades no e-mail ${email}`)
-        setEmail('');
+        email === "" ? alert('Escreva um e-mail válido') : alert(`Obrigado pela sua assinatura, você receberá nossas novidades no e-mail ${email}`)
 
-        sgMail.setApiKey(import.meta.env.VITE_SENDGRID_API_KEY)
+        sgMail.setApiKey(import.meta.env.VITE_SENDGRID_API_KEY);
         const msg = {
-            to: `${email}`,
-            from: 'ricardoferreira4496@gmail.com',
-            subject: 'Newsletter da Casa Verde',
-            text: `Olá, .
-                Boas-vindas à Casa Verde! Você se cadastrou em nossa newsletter e vai começar a receber e-mails com as novidades de nossa loja e dicas de como cuidar de suas plantas.
-                Até logo!`,
+            to: 'to@ricardoferreira4496@gmail.com.com',
+            from: `${email}`,
+            subject: 'Sending with SendGrid is Fun',
+            text: 'and easy to do anywhere, even with Node.js',
             html: '<strong>and easy to do anywhere, even with Node.js</strong>',
-        }
+        };
+
         sgMail
             .send(msg)
             .then(() => {
-                console.log('Email enviado')
+                console.log('Email sent');
             })
             .catch((error) => {
-                console.error(error)
-            })
+                console.error(error);
+            });
+        setEmail('');
+
     }
 
     return (
