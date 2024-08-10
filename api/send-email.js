@@ -7,9 +7,13 @@ export default async function handler(req, res) {
     if (req.method === 'POST') {
         const { email } = req.body;
 
+        if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+            return res.status(400).json({ error: 'Email inválido' });
+        }
+
         const msg = {
             to: email,
-            from: 'your-email@example.com', // Substitua pelo seu endereço de e-mail verificado no SendGrid
+            from: 'your-email@example.com', // Substitua pelo seu e-mail verificado
             subject: 'Newsletter da Casa Verde',
             text: `Olá,
                 Boas-vindas à Casa Verde! Você se cadastrou em nossa newsletter e vai começar a receber e-mails com as novidades de nossa loja e dicas de como cuidar de suas plantas.
@@ -21,6 +25,7 @@ export default async function handler(req, res) {
             await sgMail.send(msg);
             res.status(200).json({ message: 'Email enviado' });
         } catch (error) {
+            console.error('Erro ao enviar e-mail:', error.response ? error.response.body : error.message);
             res.status(500).json({ error: 'Erro ao enviar e-mail' });
         }
     } else {
@@ -28,3 +33,4 @@ export default async function handler(req, res) {
         res.status(405).end(`Método ${req.method} não permitido`);
     }
 }
+
