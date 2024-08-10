@@ -14,6 +14,7 @@ function AppRoutes() {
   const [plantsList, setPlantsList] = useState(plants);
   return (
     <BrowserRouter>
+    
       <GlobalStyles />
       <Routes>
         <Route path="/" element={<Default background={background} />}>

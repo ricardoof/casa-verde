@@ -2,8 +2,7 @@ import styled from "styled-components"
 
 const Header = styled.header`
     display: flex;
-    justify-content: space-around;
-    margin: 1rem 0;
+    justify-content: space-between;
     width: 100%;
 `
 

@@ -9,11 +9,17 @@ const DefaultContainer = styled.main`
     background-position: top right;
 `
 
+const Div = styled.div`
+    margin: 0 20rem;
+`
+
 export default function Default({ background }) {
     return (
         <DefaultContainer $background={background}>
-            <Menu />
-            <Outlet />
+            <Div>
+                <Menu />
+                <Outlet />
+            </Div>
             <Footer />
         </DefaultContainer>
     )

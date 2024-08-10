@@ -3,6 +3,7 @@ import TextField from "../TextField"
 import mail from './mail.png'
 import plant from './plant.png'
 import { useState } from "react"
+import sgMail from '@sendgrid/mail';
 
 const StyledNewsLetter = styled.div`
     display: flex;
@@ -63,6 +64,25 @@ export default function NewsLetter() {
         event.preventDefault();
         email == "" ? alert('Escreva um e-mail válido') : alert(`Obrigado pela sua assinatura, você receberá nossas novidades no e-mail ${email}`)
         setEmail('');
+
+        sgMail.setApiKey(import.meta.env.VITE_SENDGRID_API_KEY)
+        const msg = {
+            to: `${email}`,
+            from: 'ricardoferreira4496@gmail.com',
+            subject: 'Newsletter da Casa Verde',
+            text: `Olá, .
+                Boas-vindas à Casa Verde! Você se cadastrou em nossa newsletter e vai começar a receber e-mails com as novidades de nossa loja e dicas de como cuidar de suas plantas.
+                Até logo!`,
+            html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+        }
+        sgMail
+            .send(msg)
+            .then(() => {
+                console.log('Email enviado')
+            })
+            .catch((error) => {
+                console.error(error)
+            })
     }
 
     return (
