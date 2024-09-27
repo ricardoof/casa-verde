@@ -1,4 +1,3 @@
-// api/send-email.js
 import sgMail from '@sendgrid/mail';
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
@@ -14,7 +13,7 @@ export default async function handler(req, res) {
         const name = emailParts[0];
         const msg = {
             to: email,
-            from: 'ricardoferreira4496@gmail.com', // Substitua pelo seu e-mail verificado
+            from: 'ricardoferreira4496@gmail.com',
             subject: 'Newsletter da Casa Verde',
             text: `Olá ${name},
                 Boas-vindas à Casa Verde! Você se cadastrou em nossa newsletter e vai começar a receber e-mails com as novidades de nossa loja e dicas de como cuidar de suas plantas.

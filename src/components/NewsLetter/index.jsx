@@ -3,7 +3,6 @@ import TextField from "../TextField"
 import mail from './mail.png'
 import plant from './plant.png'
 import { useState } from "react"
-import sgMail from '@sendgrid/mail';
 
 const StyledNewsLetter = styled.div`
     display: flex;
@@ -88,30 +87,6 @@ export default function NewsLetter() {
             alert('Erro ao enviar e-mail. Tente novamente mais tarde.');
         }
     };
-
-    // const whenSave = (event) => {
-    //     event.preventDefault();
-    //     email === "" ? alert('Escreva um e-mail válido') : alert(`Obrigado pela sua assinatura, você receberá nossas novidades no e-mail ${email}`)
-
-    //     sgMail.setApiKey(import.meta.env.VITE_SENDGRID_API_KEY);
-    //     const msg = {
-    //         to: 'to@ricardoferreira4496@gmail.com.com',
-    //         from: `${email}`,
-    //         subject: 'Sending with SendGrid is Fun',
-    //         text: 'and easy to do anywhere, even with Node.js',
-    //         html: '<strong>and easy to do anywhere, even with Node.js</strong>',
-    //     };
-
-    //     sgMail
-    //         .send(msg)
-    //         .then(() => {
-    //             console.log('Email sent');
-    //         })
-    //         .catch((error) => {
-    //             console.error(error);
-    //         });
-    //     setEmail('');
-    // }
 
     return (
         <StyledNewsLetter>

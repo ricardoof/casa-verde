@@ -3,7 +3,7 @@ import styled from "styled-components"
 const Header = styled.header`
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    margin: 0 20rem;
 `
 
 const StyledList = styled.ul`
@@ -24,23 +24,23 @@ export default function Menu() {
             <nav>
                 <StyledList>
                     <li>
-                        <a href="/">Como fazer</a>
+                        <a href="#">Como fazer</a>
                         /
                     </li>
                     <li>
-                        <a href="/">Ofertas</a>
+                        <a href="#">Ofertas</a>
                         /
                     </li>
                     <li>
-                        <a href="/">Depoimentos</a>
+                        <a href="#">Depoimentos</a>
                         /
                     </li>
                     <li>
-                        <a href="/">Vídeos</a>
+                        <a href="#">Vídeos</a>
                         /
                     </li>
                     <li>
-                        <a href="/">Meu carrinho</a>
+                        <a href="#">Meu carrinho</a>
                     </li>
                 </StyledList>
             </nav>
